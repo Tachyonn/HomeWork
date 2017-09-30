@@ -1,0 +1,10 @@
+Barsik is jumping!
+Grisha meows!
+Default cat eating!
+Barsik fights vs Zhora...
+And the Winner is Zhora!!
+Barsik eating!
+Barsik fights vs Grisha...
+And the Winner is Grisha!!
+
+Process finished with exit code 0
