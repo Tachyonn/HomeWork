@@ -1,0 +1,60 @@
+package homeWork04;
+
+import java.util.ArrayList;
+
+/**
+ * Опишите класс Phone (одним из свойств должен быть его номер). Также опишите
+ * класс Network (сеть мобильного оператора). Телефон должен иметь метод
+ * регистрации в сети мобильного оператора. Также у телефона должен быть метод call
+ * (номер другого телефона), который переберет все телефоны, зарегистрированные в
+ * сети. Если такой номер найден, то осуществить вызов, если нет - вывести сообщение
+ * о неправильности набранного номера.
+ */
+
+public class Network {
+
+    private ArrayList<Phone> network;
+    private String networkName;
+
+    public Network() {
+        initNetwork("default");
+    }
+
+    public Network(String networkName) {
+        initNetwork(networkName);
+    }
+
+    private void initNetwork(String networkName) {
+        network = new ArrayList<>();
+        this.networkName = networkName;
+    }
+
+    public void registerPhone(Phone phone) {
+        network.add(phone);
+    }
+
+    public boolean searchNumber(long phoneNumber) {
+        for (Phone phone : network) {
+            if (phoneNumber == phone.getPhoneNumber()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void getPhonesList() {
+        for (Phone phone : network) {
+            System.out.println(phone.getPhoneNumber());
+        }
+    }
+
+    public String getNetworkName() {
+        return networkName;
+    }
+
+    @Override
+    public String toString() {
+        return "Network " + networkName;
+    }
+}
