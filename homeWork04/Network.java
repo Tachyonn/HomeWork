@@ -1,8 +1,6 @@
 package homeWork04;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * Опишите класс Phone (одним из свойств должен быть его номер). Также опишите
