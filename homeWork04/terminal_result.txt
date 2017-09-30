@@ -1,0 +1,13 @@
+Phone 380503835493 registered in Kyivstar
+Phone 380679579577 registered in Kyivstar
+Phone 380555555555 registered in Kyivstar
+Motorola 380679579577 dialing 380679579577
+Connected!
+Samsung 380555555555 dialing 380555555555
+Connected!
+Xiaomi 380555555544 dialing 380555555544
+Error! Phone number not found!
+Motorola 380503835493 dialing 380503835493
+Error! It's your own number!
+
+Process finished with exit code 0
