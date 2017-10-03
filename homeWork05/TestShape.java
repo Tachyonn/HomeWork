@@ -21,13 +21,8 @@ public class TestShape {
     public static void main(String[] args) {
         Triangle tri1 = new Triangle(new Point(5, 0), new Point(5, 15), new Point(15, 0));
         Triangle tri2 = new Triangle(new Point(5, 5), new Point(10, 5), new Point(10, 15));
-        //Triangle tri3 = new Triangle(new Point(5, 5), new Point(10, 5), new Point(10, 5)); //not exist
-        //Rectangle rect1 = new Rectangle(new Point(5, 5), new Point(10, 5), new Point(5, 15));
-        //Rectangle rect2 = new Rectangle(new Point(5, 5), new Point(11, 5), new Point(12, 15)); //not exist
         Rectangle rect3 = new Rectangle(new Point(5, 5), new Point(10, 5), new Point(10, 15));
-        //Circle circ1 = new Circle(new Point(5, 5), 10);
         Circle circ2 = new Circle(new Point(5, 8), 15);
-        //Circle circ3 = new Circle(new Point(5, 8), 0); //not exist
 
         Board board = new Board();
         board.put(tri1,1);
@@ -37,7 +32,5 @@ public class TestShape {
         board.getStatus();
         board.remove(2);
         board.getStatus();
-
-
     }
 }
