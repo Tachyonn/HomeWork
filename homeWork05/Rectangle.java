@@ -51,7 +51,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    double getPerimeter() {
+    public double getPerimeter() {
         if (exists) {
             return (length + width) * 2;
         } else {
@@ -60,7 +60,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         if (exists) {
             return length * width;
         } else {
