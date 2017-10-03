@@ -25,6 +25,8 @@ public class Board {
     public void remove(int quarter) {
         if (isInRange(quarter)) {
             shapeBoard[quarter - 1] = null;
+        }else {
+            System.out.println("Quarter must be from 1 to 4");
         }
     }
 
