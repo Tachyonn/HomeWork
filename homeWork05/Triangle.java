@@ -32,14 +32,14 @@ public class Triangle extends Shape {
     }
 
     @Override
-    double getPerimeter() {
+    public double getPerimeter() {
         if (exists)
             return sideA + sideB + sideC;
         return -1;  //Треугольник не существует
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         if (exists) {
             double p = (sideA + sideB + sideC) / 2;
             return Math.sqrt(p * ((p - sideA) * (p - sideB) * (p - sideC)));
