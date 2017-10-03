@@ -22,7 +22,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    double getPerimeter() {
+    public double getPerimeter() {
         if (exists) {
             return 2 * Math.PI * radius;
         } else {
@@ -31,7 +31,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         if (exists) {
             return Math.pow(Math.PI * radius, 2);
         } else {
