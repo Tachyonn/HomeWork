@@ -23,8 +23,12 @@ public class Group {
     }
 
     public void add(Student student) throws OutOfBoundsException {
-        if (indexPointer > 10) throw new OutOfBoundsException(); //написать свое исключение
-        if (student == null) throw new IllegalArgumentException("Argument is Null");
+        if (indexPointer > 10) {
+            throw new OutOfBoundsException(); //написать свое исключение
+        }
+        if (student == null) {
+            throw new IllegalArgumentException("Argument is Null");
+        }
         if (studentInGroup(student) < 0) {
             group[indexPointer++] = student;
             System.out.println("Студент " + student.getFirstName() + " " + student.getSurName() + " добавлен в группу.");
@@ -49,7 +53,9 @@ public class Group {
                 result.add(group[i]);
             }
         }
-        if (result.size() == 0) System.out.println("Ничего не найдено.");
+        if (result.size() == 0) {
+            System.out.println("Ничего не найдено.");
+        }
         return result;
     }
 
@@ -72,7 +78,7 @@ public class Group {
     }
 
     private void removeNulls(List groupList) {
-        Iterator iterator = groupList.iterator();
+        Iterator<Student> iterator = groupList.iterator();
         while (iterator.hasNext()) {
             if (iterator.next() == null) {
                 iterator.remove();
