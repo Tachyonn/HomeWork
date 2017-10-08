@@ -1,6 +1,7 @@
 package homeWork06;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,8 +28,8 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        ArrayList searchResult = group.search("Dobkin");
-        for (Object currentStudent : searchResult) {
+        List<Student> searchResult = group.search("Dobkin");
+        for (Student currentStudent : searchResult) {
             System.out.println(currentStudent.toString());
         }
 

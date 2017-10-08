@@ -24,6 +24,10 @@ public class Group {
 
     public void add(Student student) throws OutOfBoundsException {
         if (indexPointer > 10) throw new OutOfBoundsException(); //написать свое исключение
+        if (student == null) {
+            System.out.println("Argument is NULL");
+            return;
+        }
         if (studentInGroup(student) < 0) {
             group[indexPointer++] = student;
             System.out.println("Студент " + student.getFirstName() + " " + student.getSurName() + " добавлен в группу.");
@@ -41,8 +45,8 @@ public class Group {
         } else System.out.println("Нет такого студента");
     }
 
-    public ArrayList search(String lastName) {
-        ArrayList result = new ArrayList();
+    public List<Student> search(String lastName) {
+        List<Student> result = new ArrayList();
         for (int i = 0; i < group.length; i++) {
             if (group[i] != null && group[i].getSurName().equalsIgnoreCase(lastName)) {
                 result.add(group[i]);
@@ -54,16 +58,10 @@ public class Group {
 
     @Override
     public String toString() {
-
-        ArrayList sortedList = new ArrayList(Arrays.asList(group));
-        Iterator iterator = sortedList.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next() == null) {
-                iterator.remove();
-            }
-        }
-        sortedList.sort((o1, o2) -> ((Student) o1).getSurName().compareToIgnoreCase(((Student) o2).getSurName()));
-        for (Object student : sortedList) {
+        List<Student> sortedList = new ArrayList(Arrays.asList(group));
+        removeNulls(sortedList);
+        sortedList.sort((o1, o2) -> o1.getSurName().compareToIgnoreCase(o2.getSurName()));
+        for (Student student : sortedList) {
             System.out.println(student);
         }
         return "";
@@ -74,5 +72,14 @@ public class Group {
             if (group[i] != null && student.equals(group[i])) return i;
         }
         return -1;
+    }
+
+    private void removeNulls(List groupList) {
+        Iterator iterator = groupList.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() == null) {
+                iterator.remove();
+            }
+        }
     }
 }
