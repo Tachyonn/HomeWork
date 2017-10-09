@@ -77,12 +77,13 @@ public class Group {
         return -1;
     }
 
-    private void removeNulls(List groupList) {
-        Iterator<Student> iterator = groupList.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next() == null) {
-                iterator.remove();
-            }
-        }
+    private void removeNulls(List<Student> groupList) {
+        groupList.removeIf(p -> p == null); //удаляем Null из списка с помощью лямбда функции
+//        Iterator<Student> iterator = groupList.iterator();
+//        while (iterator.hasNext()) {
+//            if (iterator.next() == null) {
+//                iterator.remove();
+//            }
+//        }
     }
 }
