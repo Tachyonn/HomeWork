@@ -13,48 +13,23 @@ public class UserInput {
         //String firstName, String surName, Sex sex, int age, String course, String thesis)
         try {
             System.out.println("Enter first name:");
-            String firstName = reader.readLine();
-            if (firstName == "") {
-                firstName = "default name";
-            }
+            String firstName = checkString(reader.readLine());
 
             System.out.println("Enter last name:");
-            String lastName = reader.readLine();
-            if (lastName == "") {
-                lastName = "default lastname";
-            }
+            String lastName = checkString(reader.readLine());
 
             System.out.println("Enter sex - male or female:");
             String sexInput = reader.readLine();
-            if (sexInput == "") {
-                sexInput = "male";
-            }
-            Sex sex;
-            if (sexInput.equalsIgnoreCase("male")) {
-                sex = Sex.MALE;
-            } else if (sexInput.equalsIgnoreCase("female")) {
-                sex = Sex.FEMALE;
-            } else {
-                throw new IllegalArgumentException("Wrong sex!");
-            }
+            Sex sex = checkSex(sexInput);
 
             System.out.println("Enter age:");
-            int age = Integer.parseInt(reader.readLine());
-            if (age < 16) {
-                age = 16;
-            }
+            int age = checkAge(Integer.parseInt(reader.readLine()));
 
             System.out.println("Enter course:");
-            String course = reader.readLine();
-            if (course == "") {
-                course = "default course";
-            }
+            String course = checkString(reader.readLine());
 
             System.out.println("Enter thesis:");
-            String thesis = reader.readLine();
-            if (thesis == "") {
-                thesis = "default thesis";
-            }
+            String thesis = checkString(reader.readLine());
 
             return new Student(firstName, lastName, sex, age, course, thesis);
 
@@ -68,5 +43,28 @@ public class UserInput {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    private int checkAge(int age) {
+        return age > 16 ? age : 16;
+    }
+
+    private String checkString(String inputString) {
+        return inputString == "" ? "default" : inputString;
+    }
+
+    private Sex checkSex(String sexInput) {
+        if (sexInput == "") {
+            sexInput = "male";
+        }
+        Sex sex;
+        if (sexInput.equalsIgnoreCase("male")) {
+            sex = Sex.MALE;
+        } else if (sexInput.equalsIgnoreCase("female")) {
+            sex = Sex.FEMALE;
+        } else {
+            throw new IllegalArgumentException("Wrong sex!");
+        }
+        return sex;
     }
 }
