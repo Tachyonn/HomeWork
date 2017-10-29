@@ -1,7 +1,5 @@
 package homeWork12;
 
-import com.sun.org.apache.xpath.internal.operations.String;
-
 public class Main {
     public static void main(String[] args) throws BlacklistedException {
         Stack stack1 = new Stack();
