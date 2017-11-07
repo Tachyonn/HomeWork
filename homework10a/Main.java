@@ -2,7 +2,7 @@ package homework10a;
 
 public class Main {
     public static void main(String[] args) {
-        int maxElements = 1000000;
+        int maxElements = 1_000_000;
         int[] testArray = new int[maxElements];
         for (int i = 0; i < testArray.length; i++) {
             testArray[i] = i;
@@ -12,6 +12,7 @@ public class Main {
         Long timeEnd = System.currentTimeMillis();
         System.out.println("Total concurrent time is " + (timeEnd - timeStart) + " ms");
 
+        System.out.println();
         timeStart = System.currentTimeMillis();
         System.out.println("Non-concurrent total Sum is " + foreachSum(testArray));
         timeEnd = System.currentTimeMillis();

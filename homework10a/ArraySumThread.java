@@ -4,16 +4,20 @@ import java.util.concurrent.Callable;
 
 public class ArraySumThread implements Callable<Long> {
     private int[] arr;
+    private int begin;
+    private int end;
 
-    public ArraySumThread(int[] arr) {
+    public ArraySumThread(int[] arr, int begin, int end) {
         this.arr = arr;
+        this.begin = begin;
+        this.end = end;
     }
 
     @Override
     public Long call() throws Exception {
         long sum = 0L;
-        for (Integer element : arr) {
-            sum += element;
+        for (int i = begin; i < end; i++) {
+            sum += arr[i];
         }
         return sum;
     }
